@@ -6,7 +6,7 @@ aiosqlite==0.20.0
 langchain==0.3.7
 langchain-groq==0.2.2
 langchain-community==0.3.7
-supermemory==0.2.0
+supermemory
 pydantic==2.9.2
 pydantic-settings==2.5.2
 python-dotenv==1.0.1
