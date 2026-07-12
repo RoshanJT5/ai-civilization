@@ -73,7 +73,7 @@ export default function SceneViewer() {
     if (!activeDialogue) return [];
     const contentStr = activeDialogue.content || activeDialogue.payload || activeDialogue.summary || "";
     if (activeDialogue.type === 'CONVERSATION' && contentStr.includes(':')) {
-       return contentStr.split('\n').map(line => {
+       return contentStr.split('\n').map((line: string) => {
          const colonIdx = line.indexOf(':');
          return colonIdx > -1 ? line.substring(0, colonIdx).trim().toLowerCase() : '';
        }).filter(Boolean);
@@ -130,7 +130,7 @@ export default function SceneViewer() {
                 const lines = contentStr.split('\n');
                 return (
                   <div className="flex flex-col gap-4 mt-2">
-                    {lines.map((line, i) => {
+                    {lines.map((line: string, i: number) => {
                       const colonIdx = line.indexOf(':');
                       if (colonIdx > -1) {
                         const speaker = line.substring(0, colonIdx).trim();

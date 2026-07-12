@@ -8,7 +8,9 @@ import SceneViewer from './components/SceneViewer'
 import ProvenanceGraph from './components/ProvenanceGraph'
 import { useWorldStore } from './store/worldStore'
 
-const WS_URL = `ws://${window.location.hostname}:8000/api/v1/stream`
+const WS_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+  ? `ws://${window.location.hostname}:8000/api/v1/stream` 
+  : `wss://ai-civilization.onrender.com/api/v1/stream`;
 
 export default function App() {
   const wsRef = useRef<WebSocket | null>(null)
