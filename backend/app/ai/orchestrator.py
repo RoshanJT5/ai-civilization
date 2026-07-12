@@ -66,7 +66,7 @@ class CognitionOrchestrator:
         if self._llm is None and settings.groq_api_key:
             self._llm = ChatGroq(
                 api_key=settings.groq_api_key,
-                model="llama-3.3-70b-versatile",
+                model="llama-3.1-8b-instant",
                 temperature=0.7,
             )
         return self._llm
